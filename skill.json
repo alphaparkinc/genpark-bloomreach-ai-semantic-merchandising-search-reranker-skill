@@ -1,0 +1,37 @@
+{
+  "name": "genpark-bloomreach-ai-semantic-merchandising-search-reranker-skill",
+  "version": "1.0.0",
+  "description": "Bloomreach-inspired AI Semantic E-Commerce Search & Merchandising Reranker. Parses customer shopping intent, expands synonyms, applies visual/category boost & bury rules, and balances semantic relevance against gross margin & stock availability.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "rerank_catalog",
+      "description": "Execute Bloomreach-style semantic query parsing and merchandising reranking across catalog items.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Customer natural search query."
+          },
+          "catalog_items": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Products with title, category, price, margin_rate, stock, and tags."
+          },
+          "merchandising_rules": {
+            "type": "object",
+            "description": "Boost and bury rules by category, brand, or attribute."
+          }
+        },
+        "required": [
+          "query",
+          "catalog_items"
+        ]
+      }
+    }
+  ]
+}
